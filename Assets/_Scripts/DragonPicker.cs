@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class DragonPicker : MonoBehaviour
 {
     public GameObject energyShieldPrefab;
@@ -11,7 +12,8 @@ public class DragonPicker : MonoBehaviour
     public float energyShieldRadius = 1.5f;
     
     public List<GameObject> shieldList;
-    void Start()
+    
+    private void Start()
     {
         shieldList = new List<GameObject>();
 
@@ -23,15 +25,15 @@ public class DragonPicker : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
 
-    public void DragonEggDestroyed(){
+    public void DragonEggDestroyed ()
+    {
         GameObject[] tDragonEggArray = GameObject.FindGameObjectsWithTag("Dragon Egg");
-        foreach (GameObject tGO in tDragonEggArray){
+        foreach (GameObject tGO in tDragonEggArray) {
             Destroy(tGO);
         }
         int shieldIndex = shieldList.Count - 1;
@@ -39,7 +41,7 @@ public class DragonPicker : MonoBehaviour
         shieldList.RemoveAt(shieldIndex);
         Destroy(tShieldGo);
 
-        if (shieldList.Count == 0){
+        if (shieldList.Count == 0) {
             SceneManager.LoadScene("_0Scene");
         }
     }
