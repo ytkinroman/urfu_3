@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16357511, g: 0.3605243, b: 0.5073798, a: 1}
+  m_IndirectSpecularColor: {r: 0.16357538, g: 0.36052445, b: 0.5073798, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -459,7 +459,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &562010786
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -476,7 +476,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!212 &562010787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 466.6, y: -155.2}
+  m_AnchoredPosition: {x: 466.6, y: -155.20001}
   m_SizeDelta: {x: 900, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691727374
@@ -1099,9 +1099,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1424,6 +1432,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 101568, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
@@ -1448,19 +1457,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454130, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9958533
+      value: 0.9899287
       objectReference: {fileID: 0}
     - target: {fileID: 454130, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.026077311
+      value: -0.025922172
       objectReference: {fileID: 0}
     - target: {fileID: 454130, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.08712591
+      value: 0.13912539
       objectReference: {fileID: 0}
     - target: {fileID: 454130, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0022814702
+      value: 0.0036431232
       objectReference: {fileID: 0}
     - target: {fileID: 454130, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1468,7 +1477,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454130, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 454130, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1479,6 +1488,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 6f8efc6874bcd2f42927722ffb738749, type: 2}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aacf7a45bdb5d0242a0bf7151db503ab, type: 3}
 --- !u!1 &1269022039
 GameObject:
@@ -1906,6 +1918,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1938,6 +1951,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 162790, guid: 247b0e563c3f6d745b4cd314b0cb9536, type: 3}
@@ -2001,6 +2015,9 @@ PrefabInstance:
       value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 247b0e563c3f6d745b4cd314b0cb9536, type: 3}
 --- !u!1 &1985890148
 GameObject:
